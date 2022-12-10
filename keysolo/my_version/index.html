@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Поле Чудес "в слепую"</title>
+</head>
+<body>
+	<div class="card">
+		<div class="timer">
+			<p class="textCursiv">Осталось секунд: <span class="time">30</span></p>
+		</div>
+		<div class="game">
+			<div class="score">
+				<p class="textCursiv">Правильных слов: <span class="statusWin">0</span> </p>
+				<p class="textCursiv">Неправильных слов: <span class="statusLoose">0</span> </p>
+			</div>
+			<div class="word" id="word">
+
+			</div>
+			<div class="addWord">
+				<input type="text" id="addWord_text" class="addWord_text" placeholder="Добавь новое слово">
+				<button type="sumbit" class="addWord_button" id="button">Добавить</button>
+			</div>
+		</div>
+	</div>
+
+
+
+<script type="text/javascript" src="task.js"></script>	
+</body>
+</html>
