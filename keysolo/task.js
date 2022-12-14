@@ -2,8 +2,8 @@ class Game {
   constructor(container) {
     this.container = container;
     this.wordElement = container.querySelector('.word');
-    this.winsElement = container.querySelector('.status__wins');
-    this.lossElement = container.querySelector('.status__loss');
+    this.statusWin = document.querySelector('.status__wins');
+    this.statusLoss = document.querySelector('.status__loss');
 
     this.reset();
 
@@ -11,35 +11,58 @@ class Game {
   }
 
   reset() {
+    this.statusWin.textContent = 0;
+    this.statusLoss.textContent = 0;
     this.setNewWord();
-    this.winsElement.textContent = 0;
-    this.lossElement.textContent = 0;
   }
 
   registerEvents() {
-    let arrWord = Array.from(document.getElementsByClassName('symbol'));
-    let i = 0;
-    function onKey(k) {
-          if(arrWord[i].textContent == k.key) {
-            i += 1;
-            this.winsElement.textContent = 1; // не измняется счетчик, остальное работает
-                if(this.winsElement.textContent == 10) {
-                  reset();
-                }
-           }      
-          else {
-            i += 1; // не измняется счетчик, остальное работает
-            this.lossElement.textContent = 1;
-            if(this.lossElement.textContent == 5) {
-              reset();
-             }
-          }
+    let setWord = Array.from(document.getElementsByClassName('symbol'));
+    let count = 0;
+    let tempWin = 0;
+    let tempLoss = 0;
+
+    window.addEventListener('keydown', (k) => {   // Проверка нажатие клавише соответвует текущему эллементу массива?
+      setWord[count].textContent === k.key ? (setWord[count] = true, count += 1) : (setWord[count] = false,count += 1);
+
+      if(count === setWord.length) {    // Если счетчик count = длинне массива, то слово закончилось и подводим итог
+        if (setWord.some(elem => elem === false)) {  // Если хоть один эллемент массива равен false то счетчик проигрышей + 1
+            tempLoss += 1;
+            this.statusLoss.textContent = tempLoss;
+            count = 0;
+            this.setNewWord();
+            setWord = Array.from(document.getElementsByClassName('symbol'));
+
+        }
+        else {
+            tempWin += 1;
+            this.statusWin.textContent = tempWin;
+            count = 0;
+            this.setNewWord();
+            setWord = Array.from(document.getElementsByClassName('symbol'));
         }
 
-    window.addEventListener('keydown', onKey);
+        if (this.statusWin.textContent == 10) {  //Проверка условия выигрыша
+          alert('Победа!');
+          tempWin = 0;
+          tempLoss = 0;
+          this.reset();
+          setWord = Array.from(document.getElementsByClassName('symbol'));
+        }
+        if (this.statusLoss.textContent == 5) {  //Проверка условия проыигрыша
+          alert('Вы проиграли!');
+          tempWin = 0;
+          tempLoss = 0;
+          this.reset();
+          setWord = Array.from(document.getElementsByClassName('symbol'));
+        }
+
+      }
+
+    });
   }
 
-  success() {
+ /* success() {
     this.currentSymbol.classList.add('symbol_correct');
     this.currentSymbol = this.currentSymbol.nextElementSibling;
     if (this.currentSymbol !== null) {
@@ -59,7 +82,7 @@ class Game {
       this.reset();
     }
     this.setNewWord();
-  }
+  }*/
 
   setNewWord() {
     const word = this.getWord();
