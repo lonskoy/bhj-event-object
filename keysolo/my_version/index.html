@@ -4,27 +4,69 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style__elements.css">
 	<title>Поле Чудес "в слепую"</title>
 </head>
 <body>
-	<div class="card">
-		<div class="timer">
-			<p class="textCursiv">Осталось секунд: <span class="time">30</span></p>
-		</div>
-		<div class="game">
-			<div class="score">
-				<p class="textCursiv">Правильных слов: <span class="statusWin">0</span> </p>
-				<p class="textCursiv">Неправильных слов: <span class="statusLoose">0</span> </p>
+	<header class="header">
+		<main class="card">
+			<div class="rulesGame">
+				<div class="card__left">
+					<h1>Правила игры:</h1>
+					<h2>Игра является клавиатурным тренажером и создана для обучения печати в слепую. </n>
+						Ваша задача успеть за отведенное время набрать без ошибок определенное количество слов.</n>
+						Выбирайте словарь русский или английский, что бы тренировать набор на разных языках.</n>
+						<ol><p>Уровни сложности:</p>
+							<li>Легкий - за 30 сек. 8 верных слов</li>
+							<li>Средний - за 25 сек. 10 верных слов</li>
+							<li>Тяжелый - за 20 сек. 12 верных слов</li>
+						</ol>
+					</h2>
+				</div>
 			</div>
-			<div class="word" id="word">
+			<div class="card__center">
+				<div class="game__box"> 
 
+					<div class="timer"> <!--Обратный таймер-->
+						<p class="textCursiv">Осталось секунд: <span class="time">30</span></p>
+					</div>
+
+					<div class="game"> 
+						<div class="score"><!--Счетчики слов-->
+							<p class="textCursiv">Правильных слов: <span class="statusWin">0</span> </p>
+							<p class="textCursiv">Неправильных слов: <span class="statusLoose">0</span> </p>
+						</div>
+						<div class="word" id="word"></div> <!--Сюда вставляются созданные span (отрисовка слова через JS)-->
+					</div>
+
+				</div>
 			</div>
-			<div class="addWord">
-				<input type="text" id="addWord_text" class="addWord_text" placeholder="Добавь новое слово">
-				<button type="sumbit" class="addWord_button" id="button">Добавить</button>
+			<div class="card__right">
+				<div class="card__right__form">
+					<div class="lang">
+						<p class="textCursiv colorWhite">Выберите язык словаря :</p>
+						<div class="lang__box">
+							<label class="textCursiv colorWhite"><input type="radio" name="lang" id="lang_ru">РУССКИЙ</label>
+							<br>
+							<label class="textCursiv colorWhite"><input type="radio" name="lang" id="lang_en">АНГЛИЙСКИЙ</label>
+						</div>
+					</div>
+					<div class="level">
+						<p class="textCursiv colorWhite">Выберите уровень игры :</p>
+							<label class="textCursiv colorWhite"><input type="radio" name="level" id="level1">Просто</label>
+							<br>
+							<label class="textCursiv colorWhite"><input type="radio" name="level" id="level2">Средне</label>
+							<br>
+							<label class="textCursiv colorWhite"><input type="radio" name="level" id="level3">Сложно</label>
+					</div>
+					<div class="button"><label class="label__button">Старт</label></div>
+				</div>
 			</div>
-		</div>
-	</div>
+		</main>
+
+	</header>
+
+	<footer class="footer">FOOTER</footer>
 
 
 

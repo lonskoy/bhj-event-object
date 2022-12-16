@@ -9,63 +9,72 @@
 }
 
 
-
 body {
     display: flex;
+    flex-direction: column;
 	background-color: black;
-    justify-content: center;
+
+}
+
+.header {
+    display: flex;
+    height: 65vh;
+    width: 99vw;
 }
 
 .card {
-	display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:3vw;
+}
+
+.card__left {
+    display: flex;
     flex-direction: column;
-	width: 700px;
-	height: 500px;
+    width: 25%;
+    min-width: 250px;
+    box-sizing: border-box;
+    font-family: 'PT-Astra-Sans';
+    font-size: 12px;
+    font-weight: 200;
+    color: wheat;
+    margin-left: 10px;
+    border: 1px red solid;
+
+}
+
+.card__center {
+	display: flex;
+	width: 50 %;
+    min-width: 700px;
+    min-height: 450px;
+    box-sizing: border-box;
+}
+
+.game__box {
+    display: flex;
+    flex-direction: column;
+    min-width: 700px;
+	height: auto;
+    min-height: 450px;
 	background-image: url('pole.jpg');
     background-size:contain;
     background-repeat: no-repeat;
-    position: absolute;
-    margin-top: 100px;
-    
+    margin-top: 35px;
+
 }
 
-.timer {
-    position: relative;
-    top: 10px;
-    left: 450px;
-}
-
-.game {
-    position: relative;
-    box-sizing: content-box;
-    left: 50px;
-    top: 170px;
-}
-
-.word {
+.card__right {
     display: flex;
-    gap: 5px;
-    font-family: 'PT-Astra-Sans', sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: darkgreen;
+    width: 25%;
+    min-width: 270px;
+    border: 1px red solid;
 }
 
-.addWord {
-    display: none;
-    margin-top: 20px;
+.footer {
+    display: flex;
+    height: 30vh;
+    border: 2px red solid;
+    box-sizing: content-box;
 }
-
-.addWord_text {
- display: none;
-}
-
-.textCursiv {
-    font-family: 'FreeHandCyr-Italic', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 800;
-}
-

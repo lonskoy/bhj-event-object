@@ -1,0 +1,119 @@
+/* ////////////////////////////////////////////// ОКНО ИГРЫ /////////////////////////////////////////////////////*/
+.timer {
+    position: relative;
+    top: 10px;
+    left: 450px;
+    max-width: 200px;
+}
+
+.game {
+    position: relative;
+    box-sizing: content-box;
+    left: 50px;
+    top: 170px;
+}
+
+.word {
+    display: flex;
+    gap: 5px;
+    font-family: 'PT-Astra-Sans', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: darkgreen;
+}
+
+.letter__true {
+    color: yellow;
+}
+
+.letter__false {
+    color: red;
+}
+
+
+.addWord {
+    display: none;
+    margin-top: 20px;
+}
+
+.addWord_text {
+ display: none;
+}
+
+.textCursiv {
+    font-family: 'FreeHandCyr-Italic', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.colorWhite {
+    color: wheat;
+}
+
+/* ////////////////////////////////////////////// ОКНО МЕНЮ СПРАВА /////////////////////////////////////////////////////*/
+
+.card__right__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.lang {
+    margin-top: 10px;
+}
+
+.lang__box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.level {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.label__button {
+    font-family: 'PT-Astra-Sans', sans-serif;
+    font-size: 20px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.label__button:hover {
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background-color: coral;
+    border: 1px solid yellow;
+    margin-top:  30px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button:hover {
+    cursor: pointer;
+    border: 3px solid yellow;
+}
+
+/* ////////////////////////////////////////////// ОКНО ПРАВИЛ СЛЕВА /////////////////////////////////////////////////////*/
+.rulesGame {
+    margin-top: 20px;
+}
+
+ol {
+    text-decoration: none;
+    list-style-type: none;
+}
