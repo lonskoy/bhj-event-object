@@ -46,7 +46,7 @@ body {
 
 .card__center {
 	display: flex;
-	width: 50 %;
+	width: 50%;
     min-width: 700px;
     min-height: 450px;
     box-sizing: border-box;
